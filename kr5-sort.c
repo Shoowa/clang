@@ -47,7 +47,7 @@ int readlines(char *lineptr[], int maxlines)
 	char *p, line[MAXLEN];
 
 	nlines = 0;
-	while((len = getline2(line, MAXLEN, stdin)) > 0) {
+	while((len = getline2(line, MAXLEN)) > 0) {
 		if (nlines >= maxlines || (p = alloc(len)) == NULL) {
 			return -1;
 		} else {
