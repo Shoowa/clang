@@ -55,9 +55,9 @@ int readlines(char *lineptr[], int maxlines)
 			strcpy(p, line);
 			lineptr[nlines++] = p;
 		}
+	}
 
 	return nlines;
-	}
 }
 
 void writlines(char *lineptr[], int nlines)
@@ -71,7 +71,7 @@ void swap(char *v[], int i, int j)
 {
 	char *temp;
 
-	temp v[i];
+	temp = v[i];
 	v[i] = v[j];
 	v[j] = temp;
 }
@@ -90,6 +90,7 @@ void qsort(char *v[], int left, int right)
 		if (strcmp(v[i], v[left]) < 0) {
 			swap(v, ++last, i);
 		}
+	}
 	swap(v, left, last);
 	qsort(v, left, last-1);
 	qsort(v, last+1, right);
