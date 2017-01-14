@@ -6,6 +6,7 @@
 char *lineptr[MAXLINES];
 
 int readlines(char *lineptr[], int nlines);
+int getline(char s[], int limit);
 void writelines(char *lineptr[], int nlines);
 void qsort(char *lineptr[], int left, int right);
 void swap(char *v[], int i, int j);
@@ -23,6 +24,18 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 	return 0;
+}
+
+int getline(char s[], int limit)
+{
+	int c, i;
+
+	while (--limit > 0 && (c=getchar()) != EOF && c != '\n')
+		s[i++] = c;
+	if (c == '\n')
+		s[i++] = c;
+	s[i] = '\0';
+	return i;
 }
 
 #define MAXLEN 1000
